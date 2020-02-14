@@ -36,8 +36,8 @@ class Biblioteca{
 		//domCasmurro.adicionarNovasUnidades(10);
 		//cortico.adicionarNovasUnidades(4);
 		
-		//String dados = domCasmurro.recuperarDados();
-		//System.out.println(dados);
+		String dados = domCasmurro.recuperarDados();
+		System.out.println(dados);
 		
 		boolean emprestar = domCasmurro.emprestar();
 		if (emprestar == true){	

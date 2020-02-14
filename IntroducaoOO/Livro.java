@@ -14,32 +14,36 @@ class Livro{
 	}
 	
 	String recuperarDados(){
-	String dados = "";
-	dados+= "Nome:" + nome + "\n" +
-	"Ano de publicação:" + anoPublicacao + "\n" + 
-	"Autor:" + autor + "\n" + 
-	"Generos:" + generos + "\n" +
-	"Editora:" + editora + "\n" +
-	"ISBN:" + isbn + "\n" +
-	"Preço:" + preco + "\n" +
-	"Unidades no acervo:" + unidadesAcervo + "\n"+
-	"Unidade emprestadas:" + unidadesEmprestadas;
-	
-	return dados;
+		String dados = "";
+		dados+= "Nome:" + nome + "\n" +
+		"Ano de publicação:" + anoPublicacao + "\n" + 
+		"Autor:" + autor + "\n" + 
+		"Generos:" + generos + "\n" +
+		"Editora:" + editora + "\n" +
+		"ISBN:" + isbn + "\n" +
+		"Preço:" + preco + "\n" +
+		"Unidades no acervo:" + unidadesAcervo + "\n"+
+		"Unidade emprestadas:" + unidadesEmprestadas;
+		
+		return dados;
 	}
 
 	boolean emprestar(){
 		if (unidadesAcervo > unidadesEmprestadas){
 			unidadesEmprestadas++;
 			return true;		
-		}
-		else{
+		}else{
 			return false;		
 		}
 	}
+
 	boolean devolver(){
-		unidadesEmprestadas--;
-		return true;
+		if(unidadesEmprestadas > 0){		
+			unidadesEmprestadas--;
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }
