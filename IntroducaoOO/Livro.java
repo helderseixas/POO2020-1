@@ -37,5 +37,9 @@ class Livro{
 			return false;		
 		}
 	}
+	boolean devolver(){
+		unidadesEmprestadas--:
+		return true;
+	}
 
 }

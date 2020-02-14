@@ -39,11 +39,18 @@ class Biblioteca{
 		//String dados = domCasmurro.recuperarDados();
 		//System.out.println(dados);
 		
-		boolean result = domCasmurro.emprestar();
-		if (result == true){	
+		boolean emprestar = domCasmurro.emprestar();
+		if (emprestar == true){	
 			System.out.println("Livro emprestado com sucesso!");
 		}else{
 			System.out.println("Impossível emprestar livro!");		
+		}
+
+		boolean  devolver = domCasmurro.devolver();
+		if(devolver == true){
+			System.out.println("Livro devolvido!");
+		}else{
+			System.out.println("Falha na operação");
 		}
 
 
