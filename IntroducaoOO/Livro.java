@@ -38,7 +38,7 @@ class Livro{
 		}
 	}
 	boolean devolver(){
-		unidadesEmprestadas--:
+		unidadesEmprestadas--;
 		return true;
 	}
 
