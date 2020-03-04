@@ -1,68 +1,54 @@
 class Biblioteca{
+  public static void main(String args[]){
 
-	public static void main(String args[]){
-		Livro domCasmurro = new Livro();
-		domCasmurro.nome = "Dom Casmurro";
-		domCasmurro.anoPublicacao = 1899;
-		domCasmurro.autor = "Machado de Assis";
-		domCasmurro.generos = "Romance,Ficção, Memórias, Realismo Literário";
-		domCasmurro.editora = "Martin clarete";
-		domCasmurro.isbn = "8572322647";
-		domCasmurro.preco = 26.10f;
+    Autor machadoAssis = new Autor();
+    machadoAssis.nomeCitacao = "ASSIS";
+    machadoAssis.nomeInicial = "Machado de";
 
-		Livro memoriasPostumas = new Livro();
-		memoriasPostumas.nome = "Memória Póstumas de Brás Cubas";
-		memoriasPostumas.anoPublicacao = 1881;
-		memoriasPostumas.autor = "Machado de Assis";
-		memoriasPostumas.generos = "Romance, Ficção";
-		memoriasPostumas.editora = "Oxford University Press";
-		memoriasPostumas.isbn = "9788496356979";
-		memoriasPostumas.preco = 27.92f;
-		
-		Livro cortico = new Livro();
-		cortico.nome = "O cortiço";
-		cortico.anoPublicacao = 1890;
-		cortico.autor = "Aluísio Azevedo";
-		cortico.generos = "Romance,Ficção, Literatura do naturalismo";
-		cortico.editora = "B. L. Garnier";
-		cortico.isbn = "9788888302423";
-		cortico.preco = 26.10f;
-				
+    Autor aluisioAzevedo = new Autor();
+    aluisioAzevedo.nomeCitacao = "AZEVEDO";
+    aluisioAzevedo.nomeInicial = "Aluísio";
 
-		System.out.println(domCasmurro.nome + " Acervo = " + domCasmurro.unidadesAcervo);
-		System.out.println(memoriasPostumas.nome + " Acervo = " + memoriasPostumas.unidadesAcervo);
-		System.out.println(cortico.nome + " Acervo = " + cortico.unidadesAcervo + "\n");
-		
-		//domCasmurro.adicionarNovasUnidades(10);
-		//cortico.adicionarNovasUnidades(4);
-		
-		String dados = domCasmurro.recuperarDados();
-		System.out.println(dados);
-		
-		boolean emprestar = domCasmurro.emprestar();
-		if (emprestar == true){	
-			System.out.println("Livro emprestado com sucesso!");
-		}else{
-			System.out.println("Impossível emprestar livro!");		
-		}
+    Editora abril = new Editora();
+    abril.nome = "Editora Abril";
+    abril.cidade = "São Paulo";
 
-		boolean  devolver = domCasmurro.devolver();
-		if(devolver == true){
-			System.out.println("Livro devolvido!");
-		}else{
-			System.out.println("Falha na operação");
-		}
+    Livro domCasmurro = new Livro();
+    domCasmurro.nome = "Dom Casmurro";
+    domCasmurro.anoPublicacao = 1899;
+    domCasmurro.autor = machadoAssis;
+    domCasmurro.generos = "Romance, Ficção, Memórias, Realismo Literário";
+    domCasmurro.editora = abril;
+    domCasmurro.isbn = "8572322647";
+    domCasmurro.preco = 26.10f;
 
+    Livro memoriasPostumas = new Livro();
+    memoriasPostumas.nome = "Memórias Póstumas de Brás Cubas";
+    memoriasPostumas.anoPublicacao = 1881;
+    memoriasPostumas.autor = machadoAssis;
+    memoriasPostumas.generos = "Romance, Ficção";
+    memoriasPostumas.editora = abril;
+    memoriasPostumas.isbn = "9788496356979";
+    memoriasPostumas.preco = 27.92f;
 
+    Livro oCortico = new Livro();
+    oCortico.nome = "O Cortiço";
+    oCortico.anoPublicacao = 1890;
+    oCortico.autor = aluisioAzevedo;
+    oCortico.generos = "Romance, Ficção, Literatura do Naturalismo";
+    oCortico.editora = abril;
+    oCortico.isbn = "9788888302423";
+    oCortico.preco = 26.10f;
 
+    System.out.println(domCasmurro.nome + " Acervo = " + domCasmurro.unidadesAcervo);
 
+    boolean livroFoiEmprestado = domCasmurro.emprestarLivro();
+    System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
+    System.out.println(domCasmurro.nome+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
 
+    livroFoiEmprestado = domCasmurro.emprestarLivro();
+    System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
+    System.out.println(domCasmurro.nome+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
 
-
-
-
-
-
-	}	
-
+  }
 }
