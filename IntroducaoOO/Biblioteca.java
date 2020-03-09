@@ -1,54 +1,32 @@
 class Biblioteca{
-  public static void main(String args[]){
+	public static void main(String args[]){
+		Autor machadoAssis = new Autor("ASSIS", "Machado de");
+		
+		Autor aluisioAzevedo = new Autor("AZEVEDO", "Aluísio");
 
-    Autor machadoAssis = new Autor();
-    machadoAssis.nomeCitacao = "ASSIS";
-    machadoAssis.nomeInicial = "Machado de";
+		Editora abril = new Editora("Editora Abril", "São Paulo");
+		
+		Livro domCasmurro = new Livro("Dom Casmurro", machadoAssis, abril, 1899);
+		
+		Livro memoriasPostumas = new Livro("Memórias Póstumas de Brás Cubas", machadoAssis, abril, 1881);
+	
+		Livro oCortico = new Livro("O Cortiço", aluisioAzevedo, abril, 1890);
+		
+		System.out.println(domCasmurro.recuperarReferenciaBibliografica());
+		System.out.println(memoriasPostumas.recuperarReferenciaBibliografica());
+		System.out.println(oCortico.recuperarReferenciaBibliografica());
+		
+		System.out.println("========================");
+		
+		System.out.println(domCasmurro.getNome() + " Acervo = " + domCasmurro.getUnidadesAcervo());
 
-    Autor aluisioAzevedo = new Autor();
-    aluisioAzevedo.nomeCitacao = "AZEVEDO";
-    aluisioAzevedo.nomeInicial = "Aluísio";
+		boolean livroFoiEmprestado = domCasmurro.emprestarLivro();
+		System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
+		System.out.println(domCasmurro.getNome()+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
 
-    Editora abril = new Editora();
-    abril.nome = "Editora Abril";
-    abril.cidade = "São Paulo";
+		livroFoiEmprestado = domCasmurro.emprestarLivro();
+		System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
+		System.out.println(domCasmurro.getNome()+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
 
-    Livro domCasmurro = new Livro();
-    domCasmurro.nome = "Dom Casmurro";
-    domCasmurro.anoPublicacao = 1899;
-    domCasmurro.autor = machadoAssis;
-    domCasmurro.generos = "Romance, Ficção, Memórias, Realismo Literário";
-    domCasmurro.editora = abril;
-    domCasmurro.isbn = "8572322647";
-    domCasmurro.preco = 26.10f;
-
-    Livro memoriasPostumas = new Livro();
-    memoriasPostumas.nome = "Memórias Póstumas de Brás Cubas";
-    memoriasPostumas.anoPublicacao = 1881;
-    memoriasPostumas.autor = machadoAssis;
-    memoriasPostumas.generos = "Romance, Ficção";
-    memoriasPostumas.editora = abril;
-    memoriasPostumas.isbn = "9788496356979";
-    memoriasPostumas.preco = 27.92f;
-
-    Livro oCortico = new Livro();
-    oCortico.nome = "O Cortiço";
-    oCortico.anoPublicacao = 1890;
-    oCortico.autor = aluisioAzevedo;
-    oCortico.generos = "Romance, Ficção, Literatura do Naturalismo";
-    oCortico.editora = abril;
-    oCortico.isbn = "9788888302423";
-    oCortico.preco = 26.10f;
-
-    System.out.println(domCasmurro.nome + " Acervo = " + domCasmurro.unidadesAcervo);
-
-    boolean livroFoiEmprestado = domCasmurro.emprestarLivro();
-    System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
-    System.out.println(domCasmurro.nome+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
-
-    livroFoiEmprestado = domCasmurro.emprestarLivro();
-    System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
-    System.out.println(domCasmurro.nome+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
-
-  }
+	}
 }
