@@ -8,6 +8,8 @@ class Livro{
 	private float preco;
 	private int unidadesAcervo;
 	private int unidadesEmprestadas;
+
+	private static int totalLivrosBiblioteca = 0;
 	
 	public Livro(String nome, Autor autor, Editora editora, int anoPublicacao){
 		this.nome = nome;
@@ -16,6 +18,8 @@ class Livro{
 		this.anoPublicacao = anoPublicacao;
 		this.unidadesAcervo = 1;
 		this.unidadesEmprestadas = 0;
+		
+		totalLivrosBiblioteca++;
 	}
 
 	public String getNome(){
@@ -28,6 +32,10 @@ class Livro{
 
 	public int getUnidadesEmprestadas(){
 		return unidadesEmprestadas;
+	}
+
+	public static int getTotalLivrosBiblioteca(){
+		return Livro.totalLivrosBiblioteca;
 	}
 	
 	public void setNome(String nome){
@@ -63,6 +71,7 @@ class Livro{
 	public void adicionarNovasUnidades(int quantidade){
 		if(quantidade > 0){
 			unidadesAcervo += quantidade;
+			totalLivrosBiblioteca += quantidade;
 		}
 	}
 

@@ -1,5 +1,7 @@
 class Biblioteca{
 	public static void main(String args[]){
+		Autor novo = new Autor("SILVA", "José");
+
 		Autor machadoAssis = new Autor("ASSIS", "Machado de");
 		
 		Autor aluisioAzevedo = new Autor("AZEVEDO", "Aluísio");
@@ -28,5 +30,12 @@ class Biblioteca{
 		System.out.println("Livro foi emprestado: " +livroFoiEmprestado);
 		System.out.println(domCasmurro.getNome()+ " Quantidade emprestadas = " +domCasmurro.getUnidadesEmprestadas());
 
+		System.out.println("========================");
+
+		System.out.println("Total de livros na biblioteca: "+ Livro.getTotalLivrosBiblioteca());
+		domCasmurro.adicionarNovasUnidades(4);
+		System.out.println("Total de livros na biblioteca: "+ Livro.getTotalLivrosBiblioteca());
+
 	}
 }
+	
